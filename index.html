@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>ShakaTV - IPTV Player</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.3.6/shaka-player.compiled.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="theme-dark">
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon">📺</div>
+            <span class="logo-text">ShakaTV</span>
+            <span class="live-badge">LIVE</span>
+        </div>
+        <div class="search-container">
+            <input type="text" class="search-box" placeholder="Search channels..." id="searchInput">
+            <button class="theme-btn" id="themeBtn" title="Toggle theme">🌙</button>
+            <button class="settings-btn" id="settingsBtn">⚙️</button>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="video-section">
+            <video class="video-player" id="videoPlayer" controls autoplay></video>
+            <div class="loading-spinner" id="loadingSpinner" style="display: none;"></div>
+        </section>
+
+        <aside class="channels-sidebar">
+            <!-- Keep existing channels sidebar content unchanged -->
+            <div class="sidebar-header">
+                <h2 class="channels-title">CHANNELS LIST</h2>
+                <div class="channels-count" id="channelsCount">0 channels</div>
+                <div class="control-buttons">
+                    <button class="test-btn" id="testAllBtn">Test All Channels</button>
+                </div>
+                
+                <div class="test-progress" id="testProgress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <div class="test-status" id="testStatus">Testing channels...</div>
+                </div>
+
+                <div class="status-legend">
+                    <div class="status-item">
+                        <div class="status-dot status-working"></div>
+                        <span>Working</span>
+                    </div>
+                    <div class="status-item">
+                        <div class="status-dot status-untested"></div>
+                        <span>Untested</span>
+                    </div>
+                    <div class="status-item">
+                        <div class="status-dot status-offline"></div>
+                        <span>Offline</span>
+                    </div>
+                    <div class="status-item">
+                        <div class="status-dot status-testing"></div>
+                        <span>Testing</span>
+                    </div>
+                </div>
+
+                <div class="category-filters">
+                    <button class="category-btn active" data-category="all">All</button>
+                    <button class="category-btn" data-category="favorites">⭐ Favorites</button>
+                    <button class="category-btn" data-category="news">News</button>
+                    <button class="category-btn" data-category="sports">Sports</button>
+                    <button class="category-btn" data-category="entertainment">Entertainment</button>
+                    <button class="category-btn" data-category="movies">Movies</button>
+                    <button class="category-btn" data-category="kids">👶 Kids</button>
+                    <button class="category-btn" data-category="beta">🧪 Beta</button>
+                </div>
+            </div>
+            <div class="channels-list" id="channelsList">
+                <div class="no-channels">
+                    <p>Loading channels...</p>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

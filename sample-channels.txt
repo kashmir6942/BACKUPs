@@ -1,0 +1,19 @@
+# BBC News HD
+https://example.com/bbc-news.mpd
+keyid1:key1example
+
+# CNN International
+https://example.com/cnn-intl.mpd
+keyid2:key2example
+
+# ESPN Sports
+https://example.com/espn.mpd
+keyid3:key3example
+
+# Movie Channel Premium
+https://example.com/movies.mpd
+keyid4:key4example
+
+# Entertainment Tonight
+https://example.com/entertainment.mpd
+keyid5:key5example

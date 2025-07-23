@@ -1,0 +1,54 @@
+BETA CHANNELS
+_____________
+
+1. One (MALAYSIAN FEED)
+<h2 style="color:white; text-align:center;">🔴 One</h2>
+<video id="video" controls autoplay style="width:100%;max-width:100%;height:auto;background:#000;"></video>
+<script src="https://cdn.jsdelivr.net/npm/shaka-player@4.3.6/dist/shaka-player.compiled.js"></script>
+<script>
+async function initPlayer() {
+  if (!shaka.Player.isBrowserSupported()) return alert("Not supported");
+  const video = document.getElementById('video');
+  const player = new shaka.Player(video);
+  player.configure({ 
+    drm: { 
+      clearKeys: { 
+        'd8fe398c79065173fa9788f226056510': '45e77e6a8ba767b63cacfdb01ef2ac29' 
+      } 
+    } 
+  });
+  await player.load('http://linearjitp-playback.astro.com.my/dash-wv/linear/2702/default_ott.mpd');
+}
+document.addEventListener('DOMContentLoaded', initPlayer);
+</script>
+__________
+2: Nickelodeon SD
+<h2 style="color:white; text-align:center;">🔴 HBO Family</h2>
+<video id="video" controls autoplay style="width:100%; max-width:100%; height:auto; background:#000;"></video>
+<script src="https://cdn.jsdelivr.net/npm/shaka-player@4.3.6/dist/shaka-player.compiled.js"></script>
+<script>
+async function initPlayer() {
+  if (!shaka.Player.isBrowserSupported()) return alert("Not supported");
+  const video = document.getElementById("video");
+  const player = new shaka.Player(video);
+  player.configure({ drm: { clearKeys: { "9ce58f37576b416381b6514a809bfd8b": "f0fbb758cdeeaddfa3eae538856b4d72" } } });
+  await player.load("https://qp-pldt-live-grp-11-prod.akamaized.net/out/u/dr_nickelodeon.mpd");
+}
+document.addEventListener("DOMContentLoaded", initPlayer);
+</script>
+______
+3. Nick jr
+<h2 style="color:white; text-align:center;">🔴 HBO Family</h2>
+<video id="video" controls autoplay style="width:100%; max-width:100%; height:auto; background:#000;"></video>
+<script src="https://cdn.jsdelivr.net/npm/shaka-player@4.3.6/dist/shaka-player.compiled.js"></script>
+<script>
+async function initPlayer() {
+  if (!shaka.Player.isBrowserSupported()) return alert("Not supported");
+  const video = document.getElementById("video");
+  const player = new shaka.Player(video);
+  player.configure({ drm: { clearKeys: { "bab5c11178b646749fbae87962bf5113": "0ac679aad3b9d619ac39ad634ec76bc8" } } });
+  await player.load("https://qp-pldt-live-grp-12-prod.akamaized.net/out/u/dr_nickjr.mpd");
+}
+document.addEventListener("DOMContentLoaded", initPlayer);
+</script>
+____
